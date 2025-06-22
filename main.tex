@@ -1,0 +1,131 @@
+\documentclass[algorithmlist,figurelist,tablelist,nomlist,phd,UTF8]{seuthesix}
+
+\usepackage{ctex}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{colortbl}
+\usepackage{listings}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% \usepackage{amsmath}
+% \usepackage{theorem}
+% \newtheorem{theorem}{Theorem}
+% \newcommand{\myblue}{\color[rgb]{0.21,0.49,0.74}}
+
+% \usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{pgfplots}
+\usepackage{tabularx}
+\usepackage{rotating}
+
+\usepackage{multirow}
+\usepackage{array}
+
+\pgfplotsset{compat=1.18}  % 使用最新版本，也可以用其他版本号
+
+\definecolor{green2}{rgb}{0.21,0.74,0.49}
+\lstset{
+    language=Python,
+    frame=single,
+    backgroundcolor=\color{gray!20},
+    basicstyle=\small\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\itshape\color{green2},
+    numbers=left,
+    stepnumber=1,
+    numberstyle=\tiny
+}
+
+\tcbuselibrary{skins,breakable}
+\newtcolorbox{myshadowbox}{
+  enhanced,
+  breakable,
+  drop shadow southeast,
+  sharp corners,
+  colback=white,
+  colframe=black
+}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\definecolor{BlueViolet}{rgb}{0.21,0.49,0.74}
+
+\newtheorem{theorem}{定理}
+% \newtheorem{theorem}{Theorem}
+\newcommand{\myblue}{\color[rgb]{0.21,0.49,0.74}}
+
+% set main font
+% \setCJKmainfont{FandolSong} 
+
+
+\begin{document}
+% ---------------------------------------- %
+% % 设置PDF压缩级别 (0-9)，9为最大压缩
+% \pdfcompresslevel=9
+% % 设置图片压缩质量
+% \pdfimageresolution=150  % 设置图片分辨率为150dpi（默认是300dpi）
+% ---------------------------------------- %
+
+\categorynumber{TP391.4} % 分类采用《中国图书资料分类法》
+\UDC{004.8}            %《国际十进分类法UDC》的类号
+\secretlevel{公开}    %学位论文密级分为"公开"、"内部"、"秘密"和"机密"四种
+\studentid{000000}   %学号要完整，前面的零不能省略。
+\title{论文题目中文}{}{Thesis Title in English}{}
+% ================================ %
+\author{作者姓名}{Author Name}
+\advisor{导师姓名}{教授}{Advisor Name}{Prof.}
+\coadvisor{副导师姓名}{教授}{Co-advisor Name}{Prof.} % 没有可以不填
+\degreetype{工学博士}{Doctor of Philosophy in Software Engineering} % 详细学位名称
+\major{软件工程}
+% ================================ %
+\submajor{}
+\defenddate{2025年XX月XX日}
+\authorizedate{}
+\committeechair{委员会主席姓名~教授}
+\reviewer{评阅人}{}
+\department{东南大学计算机科学与工程学院}{School of Computer Science and Engineering}
+% \seuthesisthanks{本课题的研究获XXX基金资助}
+\makebigcover
+\makecover
+\input{chapters/abstract.tex}
+
+% \setnomname{术语与符号约定}
+\tableofcontents
+\listofothers
+
+\mainmatter
+
+% \nomenclature{PF}{powerful fingers}
+% \nomenclature{KF}{kung fu}
+
+
+\input{chapters/introduction.tex}
+
+% 将下面的章节文件名和内容替换为您的实际章节
+\input{chapters/chapter-template.tex}
+
+% 如果有更多章节，请按以下格式添加：
+% \input{chapters/chapter2.tex}
+% \input{chapters/chapter3.tex}
+% \input{chapters/chapter4.tex}
+
+\input{chapters/conclusion.tex}
+
+% \acknowledgement
+% \input{chapters/acknowledge.tex}
+
+\thesisbib{seuthesix}
+
+
+\appendix
+
+\input{chapters/appendix.tex}
+
+\input{chapters/resume.tex}
+
+% \input{chapters/board.tex}
+
+\end{document}
